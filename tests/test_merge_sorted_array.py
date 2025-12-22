@@ -4,14 +4,14 @@ import sys
 import os
 
 # Add the problems directory to the path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'problems'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'problems'))
 
-from merge_sorted_array import Solution
+from merge_sorted_array import MergeSortedArray
 
 
 class TestMergeSortedArray(unittest.TestCase):
     def setUp(self):
-        self.solution = Solution()
+        self.mergeSortedArray = MergeSortedArray()
     
     def test_basic_merge(self):
         """Test basic merge functionality"""
@@ -20,7 +20,7 @@ class TestMergeSortedArray(unittest.TestCase):
         nums2 = [2, 5, 6]
         n = 3
         
-        self.solution.merge(nums1, m, nums2, n)
+        self.mergeSortedArray.merge(nums1, m, nums2, n)
         self.assertEqual(nums1, [1, 2, 2, 3, 5, 6])
     
     def test_empty_nums2(self):
@@ -30,7 +30,7 @@ class TestMergeSortedArray(unittest.TestCase):
         nums2 = []
         n = 0
         
-        self.solution.merge(nums1, m, nums2, n)
+        self.mergeSortedArray.merge(nums1, m, nums2, n)
         self.assertEqual(nums1, [1, 2, 3])
     
     def test_empty_nums1(self):
@@ -40,7 +40,7 @@ class TestMergeSortedArray(unittest.TestCase):
         nums2 = [1]
         n = 1
         
-        self.solution.merge(nums1, m, nums2, n)
+        self.mergeSortedArray.merge(nums1, m, nums2, n)
         self.assertEqual(nums1, [1])
     
     def test_all_nums2_smaller(self):
@@ -50,7 +50,7 @@ class TestMergeSortedArray(unittest.TestCase):
         nums2 = [1, 2, 3]
         n = 3
         
-        self.solution.merge(nums1, m, nums2, n)
+        self.mergeSortedArray.merge(nums1, m, nums2, n)
         self.assertEqual(nums1, [1, 2, 3, 4, 5, 6])
     
     def test_all_nums2_larger(self):
@@ -60,7 +60,7 @@ class TestMergeSortedArray(unittest.TestCase):
         nums2 = [4, 5, 6]
         n = 3
         
-        self.solution.merge(nums1, m, nums2, n)
+        self.mergeSortedArray.merge(nums1, m, nums2, n)
         self.assertEqual(nums1, [1, 2, 3, 4, 5, 6])
     
     def test_interleaved_merge(self):
@@ -70,7 +70,7 @@ class TestMergeSortedArray(unittest.TestCase):
         nums2 = [2, 4, 6]
         n = 3
         
-        self.solution.merge(nums1, m, nums2, n)
+        self.mergeSortedArray.merge(nums1, m, nums2, n)
         self.assertEqual(nums1, [1, 2, 3, 4, 5, 6])
     
     def test_duplicate_elements(self):
@@ -80,7 +80,7 @@ class TestMergeSortedArray(unittest.TestCase):
         nums2 = [2, 2, 3]
         n = 3
         
-        self.solution.merge(nums1, m, nums2, n)
+        self.mergeSortedArray.merge(nums1, m, nums2, n)
         self.assertEqual(nums1, [1, 2, 2, 2, 3, 3])
     
     def test_single_elements(self):
@@ -90,7 +90,7 @@ class TestMergeSortedArray(unittest.TestCase):
         nums2 = [1]
         n = 1
         
-        self.solution.merge(nums1, m, nums2, n)
+        self.mergeSortedArray.merge(nums1, m, nums2, n)
         self.assertEqual(nums1, [1, 2])
     
     def test_negative_numbers(self):
@@ -100,7 +100,7 @@ class TestMergeSortedArray(unittest.TestCase):
         nums2 = [-2, 0, 1]
         n = 3
         
-        self.solution.merge(nums1, m, nums2, n)
+        self.mergeSortedArray.merge(nums1, m, nums2, n)
         self.assertEqual(nums1, [-3, -2, -1, 0, 1])
     
     def test_larger_array(self):
@@ -110,7 +110,7 @@ class TestMergeSortedArray(unittest.TestCase):
         nums2 = [2, 4, 6, 8]
         n = 4
         
-        self.solution.merge(nums1, m, nums2, n)
+        self.mergeSortedArray.merge(nums1, m, nums2, n)
         self.assertEqual(nums1, [1, 2, 3, 4, 5, 6, 7, 8, 9])
     
     def test_unequal_array_sizes(self):
@@ -120,7 +120,7 @@ class TestMergeSortedArray(unittest.TestCase):
         nums2 = [2, 3, 4, 5]
         n = 4
         
-        self.solution.merge(nums1, m, nums2, n)
+        self.mergeSortedArray.merge(nums1, m, nums2, n)
         self.assertEqual(nums1, [1, 2, 3, 4, 5])
     
     def test_leetcode_example_1(self):
@@ -130,7 +130,7 @@ class TestMergeSortedArray(unittest.TestCase):
         nums2 = [2, 5, 6]
         n = 3
         
-        self.solution.merge(nums1, m, nums2, n)
+        self.mergeSortedArray.merge(nums1, m, nums2, n)
         self.assertEqual(nums1, [1, 2, 2, 3, 5, 6])
     
     def test_leetcode_example_2(self):
@@ -140,7 +140,7 @@ class TestMergeSortedArray(unittest.TestCase):
         nums2 = []
         n = 0
         
-        self.solution.merge(nums1, m, nums2, n)
+        self.mergeSortedArray.merge(nums1, m, nums2, n)
         self.assertEqual(nums1, [1])
     
     def test_leetcode_example_3(self):
@@ -150,7 +150,7 @@ class TestMergeSortedArray(unittest.TestCase):
         nums2 = [1]
         n = 1
         
-        self.solution.merge(nums1, m, nums2, n)
+        self.mergeSortedArray.merge(nums1, m, nums2, n)
         self.assertEqual(nums1, [1])
 
 
