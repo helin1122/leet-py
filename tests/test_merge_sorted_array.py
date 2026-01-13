@@ -6,7 +6,7 @@ import os
 # Add the problems directory to the path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'problems'))
 
-from merge_sorted_array import MergeSortedArray
+from problems.merge_sorted_array import MergeSortedArray
 
 
 class TestMergeSortedArray(unittest.TestCase):

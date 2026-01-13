@@ -1,0 +1,1 @@
+- Run test with $ pytest tests/test_two_sums.py  
